@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/pickerFragment">
+
+    <fragment
+        android:id="@+id/pickerFragment"
+        android:name="com.yeonkims.fingerpick.ui.PickerFragment"
+        android:label="fragment_picker"
+        tools:layout="@layout/fragment_picker" />
+</navigation>

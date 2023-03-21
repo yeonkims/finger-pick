@@ -7,6 +7,6 @@ import com.yeonkims.fingerpick.ui.MultiTouch
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(MultiTouch(this))
+        setContentView(R.layout.activity_main)
     }
 }

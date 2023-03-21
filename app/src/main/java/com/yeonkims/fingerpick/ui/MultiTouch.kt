@@ -9,9 +9,8 @@ import com.yeonkims.fingerpick.data.Circle
 
 class MultiTouch @JvmOverloads constructor(
     context: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
-) : View(context, attrs, defStyleAttr) {
+    attrs: AttributeSet? = null
+) : View(context, attrs) {
 
     private val circles = mutableMapOf<Int, Circle>()
 
