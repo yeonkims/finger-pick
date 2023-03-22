@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 
-class MultiTouch @JvmOverloads constructor(
+class MultiTouch constructor(
     context: Context,
     attrs: AttributeSet? = null
 ) : View(context, attrs) {
@@ -21,8 +21,14 @@ class MultiTouch @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        viewModel.getCircles().forEach { circle ->
-            canvas?.drawCircle(circle.x, circle.y, circle.radius, circle.paint)
+        if (viewModel.isPicked) {
+            viewModel.getCircles().forEach { circle ->
+                canvas?.drawCircle(circle.x, circle.y, circle.radius, circle.paint)
+            }
+        } else {
+            viewModel.getCircles().forEach { circle ->
+                canvas?.drawCircle(circle.x, circle.y, circle.radius, circle.paint)
+            }
         }
     }
 }
