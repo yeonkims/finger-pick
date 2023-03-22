@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.PickerFragment">
 
-    <com.yeonkims.fingerpick.ui.MultiTouch
+    <com.yeonkims.fingerpick.ui.multiTouch.MultiTouch
         android:id="@+id/multi_touch"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
