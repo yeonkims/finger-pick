@@ -18,18 +18,22 @@ class MultiTouchViewModel : ViewModel() {
 
         when (event.actionMasked) {
             MotionEvent.ACTION_DOWN, MotionEvent.ACTION_POINTER_DOWN -> {
-                updateCircle(id, event.getX(index), event.getY(index))
-                lastCircleUpdatedTime = System.currentTimeMillis()
+                if(!isPicked) {
+                    updateCircle(id, event.getX(index), event.getY(index))
+                    lastCircleUpdatedTime = System.currentTimeMillis()
+                }
             }
             MotionEvent.ACTION_POINTER_UP, MotionEvent.ACTION_UP -> {
-                removeCircle(id)
-                lastCircleUpdatedTime = System.currentTimeMillis()
+                if(!isPicked) {
+                    removeCircle(id)
+                    lastCircleUpdatedTime = System.currentTimeMillis()
+                }
             }
         }
 
         viewModelScope.launch {
             delay(2000)
-            if (System.currentTimeMillis() - lastCircleUpdatedTime >= 2000 && !isPicked && circles.isNotEmpty()) {
+            if (System.currentTimeMillis() - lastCircleUpdatedTime >= 2000 && !isPicked && circles.size > 1) {
                 removeRandomCircles()
                 isPicked = true
             }
