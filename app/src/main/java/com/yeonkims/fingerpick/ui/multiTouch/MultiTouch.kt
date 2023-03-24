@@ -2,14 +2,9 @@ package com.yeonkims.fingerpick.ui.multiTouch
 
 import android.content.Context
 import android.graphics.Canvas
-import android.graphics.Rect
 import android.util.AttributeSet
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
-import com.airbnb.lottie.LottieCompositionFactory
-import com.airbnb.lottie.LottieDrawable
-import com.yeonkims.fingerpick.R
 
 class MultiTouch(
     context: Context,
