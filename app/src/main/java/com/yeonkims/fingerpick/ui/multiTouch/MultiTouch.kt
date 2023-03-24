@@ -16,14 +16,7 @@ class MultiTouch(
     attrs: AttributeSet? = null
 ) : View(context, attrs) {
 
-    private val viewModel = MultiTouchViewModel()
-    private val lottieComposition = LottieCompositionFactory.fromRawResSync(context, R.raw.circle_green)
-
-    private val lottieDrawable = LottieDrawable().apply {
-        composition = lottieComposition.value
-        repeatCount = LottieDrawable.INFINITE
-        this.playAnimation()
-    }
+    private val viewModel = MultiTouchViewModel(context)
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
         viewModel.onTouchEvent(event)
@@ -33,8 +26,9 @@ class MultiTouch(
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
-        val height = lottieDrawable.intrinsicHeight
-        val width = lottieDrawable.intrinsicWidth
+        val lottieDrawables = viewModel.lottieDrawables
+        val height = lottieDrawables[0].intrinsicHeight
+        val width = lottieDrawables[0].intrinsicWidth
         val scale = 5f
 
         viewModel.getCircles().forEach { circle ->
@@ -44,7 +38,7 @@ class MultiTouch(
             canvas.scale(scale, scale, xPos, yPos)
             canvas.translate(xPos - width / 2, yPos - height / 2)
             invalidate()
-            lottieDrawable.draw(canvas)
+            lottieDrawables[circle.id % lottieDrawables.size].draw(canvas)
             canvas.restore()
         }
     }
