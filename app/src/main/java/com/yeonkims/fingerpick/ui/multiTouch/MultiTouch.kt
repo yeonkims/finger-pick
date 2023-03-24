@@ -29,13 +29,14 @@ class MultiTouch(
         val lottieDrawables = viewModel.lottieDrawables
         val height = lottieDrawables[0].intrinsicHeight
         val width = lottieDrawables[0].intrinsicWidth
-        val scale = 5f
+
+        val scaleFactor = if (viewModel.isPicked) 8f else 5f
 
         viewModel.getCircles().forEach { circle ->
             canvas!!.save()
             val xPos = circle.x
             val yPos = circle.y
-            canvas.scale(scale, scale, xPos, yPos)
+            canvas.scale(scaleFactor, scaleFactor, xPos, yPos)
             canvas.translate(xPos - width / 2, yPos - height / 2)
             invalidate()
             lottieDrawables[circle.id % lottieDrawables.size].draw(canvas)
