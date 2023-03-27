@@ -3,6 +3,10 @@ package com.yeonkims.fingerpick.util
 import com.yeonkims.fingerpick.R
 
 object ResourceManager {
+    const val touchSound = R.raw.sound_touch
+    const val doneSound = R.raw.sound_done
+    const val clearSound = R.raw.sound_clear
+
     val lottieResourceIds = listOf(
         R.raw.circle_green,
         R.raw.circle_bleen,
