@@ -20,7 +20,7 @@
     <style name="Theme.FingerPick.Splash" parent="Theme.SplashScreen">
         <!-- Splash screen color -->
         <item name="windowSplashScreenBackground">@color/black</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/logo_temp</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/img_splash_logo</item>
         <item name="postSplashScreenTheme">@style/Theme.FingerPick</item>
 
         <!-- Status / Navigation bar color -->

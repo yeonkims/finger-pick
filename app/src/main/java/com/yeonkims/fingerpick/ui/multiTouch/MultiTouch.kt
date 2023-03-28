@@ -25,7 +25,7 @@ class MultiTouch(
         val height = lottieDrawables[0].intrinsicHeight
         val width = lottieDrawables[0].intrinsicWidth
 
-        val scaleFactor = if (viewModel.isPicked) 8f else 5f
+        val scaleFactor = if (viewModel.isPicked) 8.5f else 6f
 
         viewModel.getCircles().forEach { circle ->
             canvas!!.save()
