@@ -46,6 +46,15 @@ class MultiTouchViewModel(val context: Context) : ViewModel() {
                     lastCircleUpdatedTime = System.currentTimeMillis()
                 }
             }
+            MotionEvent.ACTION_MOVE -> {
+                for (i in 0 until event.pointerCount) {
+                    val pointerId = event.getPointerId(i)
+                    circles[pointerId]?.let { circle ->
+                        circle.x = event.getX(i)
+                        circle.y = event.getY(i)
+                    }
+                }
+            }
         }
 
         viewModelScope.launch {
