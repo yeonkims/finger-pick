@@ -57,6 +57,7 @@
             android:layout_marginTop="10dp"
             android:text="@string/help_btn"
             android:textSize="14sp"
+            android:textAllCaps="false"
             app:backgroundTint="#F6F6F6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
