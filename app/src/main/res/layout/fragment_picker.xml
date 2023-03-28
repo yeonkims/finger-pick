@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".ui.PickerFragment">
 
-    <com.yeonkims.fingerpick.ui.multiTouch.MultiTouch
-        android:id="@+id/multi_touch"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="20dp"
-        android:minWidth="0dp"
-        android:minHeight="0dp"
-        android:text="@string/help"
-        android:textColor="@color/grey"
-        android:textSize="7sp"
-        app:backgroundTint="#DFDFDF" />
+        <com.yeonkims.fingerpick.ui.multiTouch.MultiTouch
+            android:id="@+id/multi_touch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/help_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:text="@string/help"
+            android:textColor="@color/grey"
+            android:textSize="11sp"
+            app:backgroundTint="#DFDFDF"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </RelativeLayout>
+
+</layout>
