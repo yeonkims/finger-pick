@@ -36,7 +36,8 @@ class MultiTouchViewModel(val context: Context) : ViewModel() {
                     SoundManager.playSound(context, ResourceManager.touchSound)
                     lastCircleUpdatedTime = System.currentTimeMillis()
                 } else {
-                    reset()
+                    if (System.currentTimeMillis() - lastCircleUpdatedTime >= 1000)
+                        reset()
                     SoundManager.playSound(context, ResourceManager.clearSound)
                 }
             }
@@ -62,6 +63,7 @@ class MultiTouchViewModel(val context: Context) : ViewModel() {
             if (System.currentTimeMillis() - lastCircleUpdatedTime >= 2000 && !isPicked && circles.size > 1) {
                 SoundManager.playSound(context, ResourceManager.doneSound)
                 removeRandomCircles()
+                lastCircleUpdatedTime = System.currentTimeMillis()
                 isPicked = true
             }
         }
